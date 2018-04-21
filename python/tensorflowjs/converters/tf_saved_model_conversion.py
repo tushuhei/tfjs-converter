@@ -94,8 +94,8 @@ def optimize_graph(graph, output_graph):
   """
   rewriter_config = rewriter_config_pb2.RewriterConfig()
   rewriter_config.optimizers[:] = [
-      'pruning', 'constfold', 'arithmetic', 'dependency', 'pruning',
-      'constfold', 'arithmetic', 'dependency'
+      'pruning', 'constfold', 'dependency', 'pruning',
+      'constfold', 'dependency'
   ]
   meta_graph = tf.train.export_meta_graph(
       graph_def=graph.as_graph_def(), graph=graph)
